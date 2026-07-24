@@ -1,214 +1,293 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 
-<!-- 网页标题 -->
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Suniverse | Bird</title>
+
+  <style>
+    /* 整个网页 */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff4cc;
+      color: #5c4b3b;
+      margin: 0;
+      text-align: center;
+    }
+
+    /* 导航栏 */
+    .navbar {
+      background-color: #fff9e6;
+      padding: 20px;
+      box-sizing: border-box;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* 导航栏链接 */
+    .navbar a {
+      margin: 20px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* 鼠标放在导航链接上时 */
+    .navbar a:hover {
+      color: #b87935;
+    }
+
+    /* 页面主要内容 */
+    .page-content {
+      margin-top: 100px;
+      padding: 20px;
+    }
+
+    /* 卡片网格 */
+    .bird-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    /* 每张鸟类卡片 */
+    .bird-card {
+      background-color: #fff9e6;
+      padding: 20px;
+      width: 250px;
+      border-radius: 15px;
+    }
+
+    /* 卡片里的图片 */
+    .bird-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+
+    /* 学名 */
+    .scientific-name {
+      font-style: italic;
+    }
+  </style>
 </head>
 
-<!-- 网页内容 -->
-<body style="font-family: Arial; background-color: #fff4cc; color: #5c4b3b; margin: 0; text-align: center;">
+<body>
 
   <!-- 导航栏 -->
-  <div style="background-color: #fff9e6; padding: 20px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: fixed; top: 0; width: 100%; z-index: 1000;">
-    <a href="/suniverse" style="margin: 20px; text-decoration: none; color: #333;">
-      Home
-    </a>
-    <a href="bird" style="margin: 20px; text-decoration: none; color: #333;">
-      Bird
-    </a>
-    <a href="trip" style="margin: 20px; text-decoration: none; color: #333;">
-      Trip
-    </a>
-    <a href="music" style="margin: 20px; text-decoration: none; color: #333;">
-      Music
-    </a>
-  </div>
-  
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="bird.html">Bird</a>
+    <a href="trip.html">Trip</a>
+    <a href="music.html">Music</a>
+  </nav>
+
   <!-- 页面内容 -->
-  <div style="margin-top: 100px;">
+  <main class="page-content">
+
     <h1>Bird</h1>
-    <p>
-      一个（暂时！）很简陋的鸟类图鉴！！☺️
-    </p>
+
+    <p>一个（暂时！）很简陋的鸟类图鉴！！☺️</p>
+
     <!-- 卡片网格 -->
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; ">
-      
-      <!-- 1 -->
-      <div style="background-color: #fff9e6; 
-           padding: 20px; margin: 20px; width: 250px; border-radius: 15px;">
+    <div class="bird-grid">
+
+      <!-- 1：欧亚鸲 -->
+      <div class="bird-card">
         <h3>
-          欧亚鸲 <br>
-          European Robin <br>
-          <i> Erithacus rubecula </i>
+          欧亚鸲<br>
+          European Robin<br>
+          <span class="scientific-name">Erithacus rubecula</span>
         </h3>
-        <img src="images/europeanrobin.jpg" alt="European Robin" 
-             style="width: 100%; height: 200px; object-fit: cover;
-             border-radius: 10px; margin: 10px 0;">
-        <p> Robin Robin 我们喜欢你！ </p>
-      </div>
-      
-      <!-- 2 -->
-      <div style="background-color: #fff9e6;
-           padding: 20px; margin: 20px; width: 250px; border-radius: 15px;">
-        <h3>
-          欧乌鸫 <br>
-          Common Blackbird <br>
-          <i> Turdus merula </i>
-        </h3>
-        <img src="images/commonblackbird.jpg" alt="Common Blackbird" 
-             style="width: 100%; height: 200px; object-fit: cover;
-             border-radius: 10px; margin: 10px 0;">
-      </div>
-      
-      <!-- 3 -->
-      <div style="background-color: #fff9e6;
-           padding: 20px; margin: 20px; width: 250px; border-radius: 15px;">
-        <h3>
-          青山雀 <br>
-          Eurasian Blue Tit <br>
-          <i> Cyanistes caeruleus </i>
-        </h3>
-        <img src="images/robin.jpg" alt="Eurasian Blue Tit" 
-             style="width: 100%; height: 200px; object-fit: cover;
-             border-radius: 10px; margin: 10px 0;">
-      </div>
-      
-      <!-- 4 -->
-      <div style="background-color: #fff9e6;
-           padding: 20px; margin: 20px; width: 250px; border-radius: 15px;">
-        <h3>
-          欧亚大山雀 <br>
-          Great Tit <br>
-          <i> Parus major </i>
-        </h3>
-        <img src="images/greattit.jpg" alt="Great Tit" 
-             style="width: 100%; height: 200px; object-fit: cover;
-             border-radius: 10px; margin: 10px 0;">
-      </div>
-      
-      <!-- 5 -->
-      <div style="background-color: #fff9e6;
-           padding: 20px; margin: 20px; width: 250px; border-radius: 15px;">
-        <h3>
-          赤鸢 <br>
-          Red Kite <br>
-          <i> Milvus milvus </i>
-        </h3>
-        <img src="images/redkite.jpg" alt="Red Kite" 
-             style="width: 100%; height: 200px; object-fit: cover;
-             border-radius: 10px; margin: 10px 0;">
-      </div>
-      
-      <!-- 6 -->
-      <div style="background-color: #fff9e6;
-           padding: 20px; margin: 20px; width: 250px; border-radius: 15px;">
-        <h3>
-          欧亚鵟 <br>
-          Common Buzzard <br>
-          <i> Buteo buteo </i>
-        </h3>
-        <img src="images/commonbuzzard.jpg" alt="Common Buzzard" 
-             style="width: 100%; height: 200px; object-fit: cover;
-             border-radius: 10px; margin: 10px 0;">
-      </div>
-      
-      <!-- 7 -->
-      <div style="background-color: #fff9e6;
-           padding: 20px; margin: 20px; width: 250px; border-radius: 15px;">
-        <h3>
-          红嘴鸥 <br>
-          Black-headed Gull <br>
-          <i> Chroicocephalus ridibundus </i>
-        </h3>
-        <img src="images/robin.jpg" alt="Black-headed Gull" 
-             style="width: 100%; height: 200px; object-fit: cover;
-             border-radius: 10px; margin: 10px 0;">
-      </div>
-      
-      <!-- 8 -->
-      <div style="background-color: #fff9e6;
-           padding: 20px; margin: 20px; width: 250px; border-radius: 15px;">
-        <h3>
-          家麻雀 <br>
-          House Sparrow <br>
-          <i> Passer domesticus </i>
-        </h3>
-        <img src="images/robin.jpg" alt="House Sparrow" 
-             style="width: 100%; height: 200px; object-fit: cover;
-             border-radius: 10px; margin: 10px 0;">
-      </div>
-      
-      <!-- 9 -->
-      <div style="background-color: #fff9e6;
-           padding: 20px; margin: 20px; width: 250px; border-radius: 15px;">
-        <h3>
-          灰雁 <br>
-          Greyleg Goose <br>
-          <i> Anser anser </i>
-        </h3>
-        <img src="images/robin.jpg" alt="Greyleg Goose" 
-             style="width: 100%; height: 200px; object-fit: cover;
-             border-radius: 10px; margin: 10px 0;">
-      </div>
-            
-      <!-- 10 -->
-      <div style="background-color: #fff9e6;
-           padding: 20px; margin: 20px; width: 250px; border-radius: 15px;">
-        <h3>
-          埃及雁 <br>
-          Egyptian Goose <br>
-          <i> Alopochen aegyptiaca </i>
-        </h3>
-        <img src="images/robin.jpg" alt="Egyptian Goose" 
-             style="width: 100%; height: 200px; object-fit: cover;
-             border-radius: 10px; margin: 10px 0;">
-      </div>
-      
-      <!-- 11 -->
-      <div style="background-color: #fff9e6;
-           padding: 20px; margin: 20px; width: 250px; border-radius: 15px;">
-        <h3>
-          加拿大黑雁 <br>
-          Canada Goose <br>
-          <i> Branta canadensis </i>
-        </h3>
-        <img src="images/robin.jpg" alt="Canada Goose" 
-             style="width: 100%; height: 200px; object-fit: cover;
-             border-radius: 10px; margin: 10px 0;">
+
+        <img
+          src="images/europeanrobin.jpg"
+          alt="European Robin"
+        >
+
+        <p>Robin Robin 我们喜欢你！</p>
       </div>
 
+      <!-- 2：欧乌鸫 -->
+      <div class="bird-card">
+        <h3>
+          欧乌鸫<br>
+          Common Blackbird<br>
+          <span class="scientific-name">Turdus merula</span>
+        </h3>
 
-      <!-- 12 -->
-      <div style="background-color: #fff9e6;
-           padding: 20px; margin: 20px; width: 250px; border-radius: 15px;">
-        <h3>
-          白颊黑雁 <br>
-          Barnacle Goose <br>
-          <i> Branta leucopsis </i>
-        </h3>
-        <img src="images/robin.jpg" alt="Barnacle Goose" 
-             style="width: 100%; height: 200px; object-fit: cover;
-             border-radius: 10px; margin: 10px 0;">
-      </div>
-      
-      <!-- 13 -->
-      <div style="background-color: #fff9e6;
-           padding: 20px; margin: 20px; width: 250px; border-radius: 15px;">
-        <h3>
-          疣鼻天鹅 <br>
-          Mute Swan <br>
-          <i> Cygnus olor </i>
-        </h3>
-        <img src="images/robin.jpg" alt="Mute Swan" 
-             style="width: 100%; height: 200px; object-fit: cover;
-             border-radius: 10px; margin: 10px 0;">
+        <img
+          src="images/commonblackbird.jpg"
+          alt="Common Blackbird"
+        >
       </div>
 
-      
+      <!-- 3：青山雀 -->
+      <div class="bird-card">
+        <h3>
+          青山雀<br>
+          Eurasian Blue Tit<br>
+          <span class="scientific-name">Cyanistes caeruleus</span>
+        </h3>
+
+        <img
+          src="images/robin.jpg"
+          alt="Eurasian Blue Tit"
+        >
+      </div>
+
+      <!-- 4：欧亚大山雀 -->
+      <div class="bird-card">
+        <h3>
+          欧亚大山雀<br>
+          Great Tit<br>
+          <span class="scientific-name">Parus major</span>
+        </h3>
+
+        <img
+          src="images/greattit.jpg"
+          alt="Great Tit"
+        >
+      </div>
+
+      <!-- 5：赤鸢 -->
+      <div class="bird-card">
+        <h3>
+          赤鸢<br>
+          Red Kite<br>
+          <span class="scientific-name">Milvus milvus</span>
+        </h3>
+
+        <img
+          src="images/redkite.jpg"
+          alt="Red Kite"
+        >
+      </div>
+
+      <!-- 6：欧亚鵟 -->
+      <div class="bird-card">
+        <h3>
+          欧亚鵟<br>
+          Common Buzzard<br>
+          <span class="scientific-name">Buteo buteo</span>
+        </h3>
+
+        <img
+          src="images/commonbuzzard.jpg"
+          alt="Common Buzzard"
+        >
+      </div>
+
+      <!-- 7：红嘴鸥 -->
+      <div class="bird-card">
+        <h3>
+          红嘴鸥<br>
+          Black-headed Gull<br>
+          <span class="scientific-name">
+            Chroicocephalus ridibundus
+          </span>
+        </h3>
+
+        <img
+          src="images/robin.jpg"
+          alt="Black-headed Gull"
+        >
+      </div>
+
+      <!-- 8：家麻雀 -->
+      <div class="bird-card">
+        <h3>
+          家麻雀<br>
+          House Sparrow<br>
+          <span class="scientific-name">Passer domesticus</span>
+        </h3>
+
+        <img
+          src="images/robin.jpg"
+          alt="House Sparrow"
+        >
+      </div>
+
+      <!-- 9：灰雁 -->
+      <div class="bird-card">
+        <h3>
+          灰雁<br>
+          Greylag Goose<br>
+          <span class="scientific-name">Anser anser</span>
+        </h3>
+
+        <img
+          src="images/robin.jpg"
+          alt="Greylag Goose"
+        >
+      </div>
+
+      <!-- 10：埃及雁 -->
+      <div class="bird-card">
+        <h3>
+          埃及雁<br>
+          Egyptian Goose<br>
+          <span class="scientific-name">Alopochen aegyptiaca</span>
+        </h3>
+
+        <img
+          src="images/robin.jpg"
+          alt="Egyptian Goose"
+        >
+      </div>
+
+      <!-- 11：加拿大黑雁 -->
+      <div class="bird-card">
+        <h3>
+          加拿大黑雁<br>
+          Canada Goose<br>
+          <span class="scientific-name">Branta canadensis</span>
+        </h3>
+
+        <img
+          src="images/robin.jpg"
+          alt="Canada Goose"
+        >
+      </div>
+
+      <!-- 12：白颊黑雁 -->
+      <div class="bird-card">
+        <h3>
+          白颊黑雁<br>
+          Barnacle Goose<br>
+          <span class="scientific-name">Branta leucopsis</span>
+        </h3>
+
+        <img
+          src="images/robin.jpg"
+          alt="Barnacle Goose"
+        >
+      </div>
+
+      <!-- 13：疣鼻天鹅 -->
+      <div class="bird-card">
+        <h3>
+          疣鼻天鹅<br>
+          Mute Swan<br>
+          <span class="scientific-name">Cygnus olor</span>
+        </h3>
+
+        <img
+          src="images/robin.jpg"
+          alt="Mute Swan"
+        >
+      </div>
+
     </div>
-  </div>
+  </main>
 
 </body>
 </html>
