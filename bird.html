@@ -107,21 +107,18 @@
       font-weight: normal;
     }
 
-    /* 翻转卡片最外层：负责尺寸、悬停 */
+    /* 翻转卡片最外层：负责尺寸 */
     .flip-card {
       width: 290px;
       height: 390px;
-      perspective: 1000px;                                      /* 立体透视感：数值越小越明显 */
-      cursor: pointer;                                          /* 鼠标移到卡片上时，光标变成小手 */
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(92, 75, 59, 0.08);            /* 阴影：左右偏移量、上下偏移量、模糊度、颜色和透明度 */
-      transition: transform 0.2s ease, box-shadow 0.2s ease;    /* 平滑变换：0.2s；开始和结束较慢中间较快 */
+      perspective: 1000px;                   /* 立体透视感：数值越小越明显 */
+      cursor: pointer;                       /* 鼠标移到卡片上时，光标变成小手 */
+      transition: transform 0.2s ease;       /* 平滑变换：0.2s；开始和结束较慢中间较快 */
     }
     
-    /* 鼠标悬停：卡片上浮、阴影变明显 */
+    /* 鼠标悬停：卡片上浮 */
     .flip-card:hover {
       transform: translateY(-4px);           /* 沿Y轴平移：向上4px */
-      box-shadow: 0 8px 18px rgba(92, 75, 59, 0.14);
     }
     
     /* 翻转主体：负责翻转 */
@@ -138,7 +135,7 @@
       transform: rotateY(-180deg);           /* 绕Y轴旋转：顺时针180deg */
     }
     
-    /* 卡片正面和背面的共同样式 */
+    /* 卡片正背面：负责背景和内容 */
     .flip-card-front,.flip-card-back {
       position: absolute;                    /* 让正背面重叠在相同位置 */
       inset: 0;                              /* 四边紧贴inner边界 */
@@ -146,10 +143,18 @@
       padding: 20px;
       background-color: #fff9e6;
       border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(92, 75, 59, 0.08);    /* 阴影：左右偏移量、上下偏移量、模糊度、颜色和透明度 */
+      transition: box-shadow 0.2s ease;
       backface-visibility: hidden;           /* 背过去的内容隐藏 */
       -webkit-backface-visibility: hidden;   /* 兼容 */ 
     }
 
+    /* 鼠标悬停：阴影变明显 */
+    .flip-card:hover .flip-card-front,
+    .flip-card:hover .flip-card-back {
+      box-shadow: 0 8px 18px rgba(92, 75, 59, 0.14);
+    }
+    
     /* 正面的图片 */
     .flip-card-front img {
       width: 100%;
@@ -197,9 +202,9 @@
         <img src="images/europeanrobin.jpg" alt="European Robin">
       </div>
 
-      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <!-- 欧亚鸲 -->
+      <div class="flip-card">
         <div class="flip-card-inner">
-          <!-- 卡片正面 -->
           <div class="flip-card-front">
             <h3>
               欧亚鸲<br>
@@ -209,7 +214,6 @@
             </h3>
             <img src="images/europeanrobin.jpg" alt="European Robin">
           </div>
-          <!-- 卡片背面 -->
           <div class="flip-card-back">
             <h3>欧亚鸲<br>翻到背面啦！<br>但是还什么都没有！<br>再点一次回到正面<br></h3>
           </div>
@@ -676,6 +680,12 @@
       img.decoding = "async";
     });
   </script>
-  
+  <script>
+  document.querySelectorAll(".flip-card").forEach(function (card) {
+    card.addEventListener("click", function () {
+      card.classList.toggle("flipped");
+    });
+  });
+</script>
 </body>
 </html>
