@@ -113,6 +113,12 @@
       height: 390px;
       perspective: 1000px;
       cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    
+    /* 鼠标移动到卡片上时，整张卡片上浮 */
+    .flip-card:hover {
+      transform: translateY(-4px);
     }
     
     /* 真正负责旋转的部分 */
@@ -126,7 +132,7 @@
     
     /* 点击后翻转 */
     .flip-card.flipped .flip-card-inner {
-      transform: rotateY(180deg);
+      transform: rotateY(-180deg);
     }
     
     /* 卡片正面和背面的共同样式 */
@@ -139,15 +145,17 @@
       background-color: #fff9e6;
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(92, 75, 59, 0.08);
+      transition: box-shadow 0.2s ease;
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
     }
 
-    .bird-card:hover {
-      transform: translateY(-4px);
+    /* 鼠标移到卡片上时，阴影变明显 */
+    .flip-card:hover .flip-card-front,
+    .flip-card:hover .flip-card-back {
       box-shadow: 0 8px 18px rgba(92, 75, 59, 0.14);
     }
-    
+
     /* 正面的图片 */
     .flip-card-front img {
       width: 100%;
@@ -158,7 +166,7 @@
     
     /* 卡片背面 */
     .flip-card-back {
-      transform: rotateY(180deg);
+      transform: rotateY(-180deg);
     
       display: flex;
       justify-content: center;
