@@ -138,9 +138,14 @@
       padding: 20px;
       background-color: #fff9e6;
       border-radius: 15px;
-    
+      box-shadow: 0 4px 12px rgba(92, 75, 59, 0.08);
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
+    }
+
+    .bird-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(92, 75, 59, 0.14);
     }
     
     /* 正面的图片 */
@@ -156,7 +161,6 @@
       transform: rotateY(180deg);
     
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
@@ -210,8 +214,8 @@
           </div>
           <!-- 卡片背面 -->
           <div class="flip-card-back">
-            <h3>欧亚鸲</h3>
-            <p>翻到背面啦！</p>
+            <h3>欧亚鸲</h3><br>
+            <p>翻到背面啦！</p><br>
             <p>再点击一次就会翻回正面</p>
           </div>
         </div>
