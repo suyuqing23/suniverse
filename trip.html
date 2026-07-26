@@ -4,36 +4,74 @@
 <!-- 网页标题 -->
 <head>
   <meta charset="UTF-8">
-  <title>Suniverse | Trip</title>
+  <title>Suniverse | Music</title>
+  <style>
+    /* 整个网页 */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff4cc;
+      color: #5c4b3b;
+      margin: 0;
+      text-align: center;
+    }
+
+    /* 导航栏 */
+    .navbar {
+      background-color: #fff9e6;
+      padding: 20px;
+      box-sizing: border-box;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* 导航栏链接 */
+    .navbar a {
+      margin: 23px;
+      text-decoration: none;
+      color: #5c4b3b;
+    
+      font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.8px;
+    }
+
+    /* 鼠标放在导航链接上时 */
+    .navbar a:hover {
+      color: #b87935;
+    }
+
+    /* 页面主要内容 */
+    .page-content {
+      margin-top: 100px;
+      padding: 20px;
+    }
+  </style>
 </head>
 
 <!-- 网页内容 -->
-<body style="font-family: Arial; background-color: #fff4cc; color: #5c4b3b; margin: 0; text-align: center;">
+<body>
 
   <!-- 导航栏 -->
-  <div style="background-color: #fff9e6; padding: 20px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: fixed; top: 0; width: 100%; z-index: 1000;">
-    <a href="/suniverse" style="margin: 20px; text-decoration: none; color: #333;">
-      Home
-    </a>
-    <a href="bird" style="margin: 20px; text-decoration: none; color: #333;">
-      Bird
-    </a>
-    <a href="trip" style="margin: 20px; text-decoration: none; color: #333;">
-      Trip
-    </a>
-    <a href="music" style="margin: 20px; text-decoration: none; color: #333;">
-      Music
-    </a>
-  </div>
+  <nav class="navbar">
+    <a href="/suniverse">Home</a>
+    <a href="bird">Bird</a>
+    <a href="trip">Trip</a>
+    <a href="music">Music</a>
+  </nav>
   
   <!-- 页面内容 -->
-  <div style="margin-top: 100px;">
+  <main class="page-content">
     <h1>Trip</h1>
     <p>
       这里可能会放一些旅游记录！
     </p>
-
-  </div>
+  </main>
 
 </body>
 </html>
