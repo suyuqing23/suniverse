@@ -581,5 +581,12 @@
     </div>
   </main>
 
+  <script>
+    document.querySelectorAll(".bird-card img").forEach(function (img) {
+      img.loading = "lazy";
+      img.decoding = "async";
+    });
+  </script>
+  
 </body>
 </html>
