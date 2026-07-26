@@ -62,8 +62,16 @@
       padding: 20px;
       width: 250px;
       border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(92, 75, 59, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
+    .bird-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(92, 75, 59, 0.14);
+    }
+
+    
     /* 卡片里的图片 */
     .bird-card img {
       width: 100%;
@@ -103,7 +111,7 @@
 
     <h1>Bird</h1>
 
-    <p>一个（暂时！）很简陋的鸟类图鉴！！☺️</p>
+    <p>一个不断长大的鸟类图鉴！！☺️</p>
 
     <!-- 卡片网格 -->
     <div class="bird-grid">
