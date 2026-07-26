@@ -71,21 +71,6 @@
       transform: translateY(-4px);
       box-shadow: 0 8px 18px rgba(92, 75, 59, 0.14);
     }
-
-    @media (max-width: 500px) {
-      .navbar {
-        padding: 16px 6px;
-      }
-    
-      .navbar a {
-        margin: 0 10px;
-      }
-    
-      .bird-card {
-        width: min(100%, 300px);
-        box-sizing: border-box;
-      }
-    }
     
     /* 卡片里的图片 */
     .bird-card img {
@@ -168,6 +153,25 @@
     .flip-card-back {
       transform: rotateY(-180deg);
     }
+
+    @media (max-width: 500px) {
+      .navbar {
+        padding: 16px 6px;
+      }
+    
+      .navbar a {
+        margin: 0 10px;
+      }
+    
+      .bird-card {
+        width: min(100%, 300px);
+        box-sizing: border-box;
+      }
+    
+      .flip-card {
+        max-width: 100%;
+      }
+    }
     
   </style>
 </head>
@@ -211,7 +215,7 @@
               欧亚鸲<br>
               European Robin<br>
               <span class="scientific-name">Erithacus rubecula</span><br>
-              <span class="taxonomy">雀形目 / 鹟科 / 欧亚鸲属</span>
+              <span class="taxonomy">雀形目 / 鹟科 / 孤鸲属</span>
             </h3>
             <img src="images/europeanrobin.jpg" alt="European Robin">
           </div>
@@ -679,17 +683,15 @@
   </main>
 
   <script>
-    document.querySelectorAll(".bird-card img").forEach(function (img) {
+    document.querySelectorAll(".bird-grid img").forEach(function (img) {
       img.loading = "lazy";
       img.decoding = "async";
     });
-  </script>
-  <script>
-  document.querySelectorAll(".flip-card").forEach(function (card) {
-    card.addEventListener("click", function () {
-      card.classList.toggle("flipped");
+    document.querySelectorAll(".flip-card").forEach(function (card) {
+      card.addEventListener("click", function () {
+        card.classList.toggle("flipped");
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
