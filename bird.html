@@ -107,53 +107,47 @@
       font-weight: normal;
     }
 
-    /* 翻转卡片最外层 */
+    /* 翻转卡片最外层：负责尺寸、悬停 */
     .flip-card {
       width: 290px;
       height: 390px;
-      perspective: 1000px;
-      cursor: pointer;
-      transition: transform 0.2s ease;
+      perspective: 1000px;                                      /* 立体透视感：数值越小越明显 */
+      cursor: pointer;                                          /* 鼠标移到卡片上时，光标变成小手 */
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(92, 75, 59, 0.08);            /* 阴影：左右偏移量、上下偏移量、模糊度、颜色和透明度 */
+      transition: transform 0.2s ease, box-shadow 0.2s ease;    /* 平滑变换：0.2s；开始和结束较慢中间较快 */
     }
     
-    /* 鼠标移动到卡片上时，整张卡片上浮 */
+    /* 鼠标悬停：卡片上浮、阴影变明显 */
     .flip-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-4px);           /* 沿Y轴平移：向上4px */
+      box-shadow: 0 8px 18px rgba(92, 75, 59, 0.14);
     }
     
-    /* 真正负责旋转的部分 */
+    /* 翻转主体：负责翻转 */
     .flip-card-inner {
-      position: relative;
+      position: relative;                    /* 为里面元素的绝对定位提供定位参照 */
       width: 100%;
       height: 100%;
       transition: transform 0.6s ease;
-      transform-style: preserve-3d;
+      transform-style: preserve-3d;          /* 让卡片内部真的保留三维结构 */
     }
     
     /* 点击后翻转 */
     .flip-card.flipped .flip-card-inner {
-      transform: rotateY(-180deg);
+      transform: rotateY(-180deg);           /* 绕Y轴旋转：顺时针180deg */
     }
     
     /* 卡片正面和背面的共同样式 */
-    .flip-card-front,
-    .flip-card-back {
-      position: absolute;
-      inset: 0;
-      box-sizing: border-box;
+    .flip-card-front,.flip-card-back {
+      position: absolute;                    /* 让正背面重叠在相同位置 */
+      inset: 0;                              /* 四边紧贴inner边界 */
+      box-sizing: border-box;                /* 让padding包含在总宽高内 */
       padding: 20px;
       background-color: #fff9e6;
       border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(92, 75, 59, 0.08);
-      transition: box-shadow 0.2s ease;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-    }
-
-    /* 鼠标移到卡片上时，阴影变明显 */
-    .flip-card:hover .flip-card-front,
-    .flip-card:hover .flip-card-back {
-      box-shadow: 0 8px 18px rgba(92, 75, 59, 0.14);
+      backface-visibility: hidden;           /* 背过去的内容隐藏 */
+      -webkit-backface-visibility: hidden;   /* 兼容 */ 
     }
 
     /* 正面的图片 */
@@ -164,7 +158,7 @@
       border-radius: 10px;
     }
     
-    /* 卡片背面 */
+    /* 背面初始时朝向后方 */
     .flip-card-back {
       transform: rotateY(-180deg);
     }
