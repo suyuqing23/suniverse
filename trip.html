@@ -55,6 +55,231 @@
       margin-top: 100px;
       padding: 20px;
     }
+  
+    /* Trip 标题 */
+    .page-content h1 {
+      font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      font-size: 42px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    /* Trip 简介 */
+    .trip-intro {
+      margin-top: 0;
+      margin-bottom: 30px;
+      color: #806c58;
+      font-size: 16px;
+    }
+
+    /* 冰箱贴区域 */
+    .trip-board {
+      position: relative;
+      width: min(1000px, 95%);
+      height: 750px;
+      margin: 20px auto 60px auto;
+    }
+
+    /* 每一个冰箱贴 */
+    .trip-magnet {
+      position: absolute;
+      display: block;
+      text-decoration: none;
+      color: #5c4b3b;
+      cursor: pointer;
+
+      transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+    }
+
+    /* 冰箱贴图片 */
+    .trip-magnet img {
+      display: block;
+      width: 100%;
+      height: auto;
+
+      filter: drop-shadow(
+        0 6px 5px rgba(80, 60, 40, 0.18)
+      );
+    }
+
+    /* 鼠标移上去 */
+    .trip-magnet:hover {
+      z-index: 20;
+      filter: brightness(1.04);
+    }
+
+    /* 地点名称 */
+    .trip-label {
+      position: absolute;
+
+      left: 50%;
+      bottom: -32px;
+      transform: translateX(-50%);
+
+      padding: 5px 10px;
+
+      background-color: rgba(255, 249, 230, 0.92);
+      border-radius: 10px;
+
+      font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      font-size: 14px;
+
+      white-space: nowrap;
+
+      opacity: 0;
+      transition: opacity 0.2s ease;
+
+      pointer-events: none;
+
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    /* hover 时显示地点 */
+    .trip-magnet:hover .trip-label {
+      opacity: 1;
+    }
+
+
+    /* =========================
+       每个地点的位置
+       ========================= */
+
+
+    /* London */
+    .london {
+      width: 190px;
+      left: 8%;
+      top: 70px;
+
+      transform: rotate(-5deg);
+    }
+
+    .london:hover {
+      transform:
+        rotate(-2deg)
+        translateY(-7px)
+        scale(1.07);
+    }
+
+
+    /* Oxford */
+    .oxford {
+      width: 165px;
+      left: 38%;
+      top: 110px;
+
+      transform: rotate(4deg);
+    }
+
+    .oxford:hover {
+      transform:
+        rotate(1deg)
+        translateY(-7px)
+        scale(1.07);
+    }
+
+
+    /* Cambridge */
+    .cambridge {
+      width: 175px;
+      right: 8%;
+      top: 80px;
+
+      transform: rotate(6deg);
+    }
+
+    .cambridge:hover {
+      transform:
+        rotate(2deg)
+        translateY(-7px)
+        scale(1.07);
+    }
+
+
+    /* York */
+    .york {
+      width: 170px;
+      left: 20%;
+      top: 390px;
+
+      transform: rotate(5deg);
+    }
+
+    .york:hover {
+      transform:
+        rotate(2deg)
+        translateY(-7px)
+        scale(1.07);
+    }
+
+
+    /* Edinburgh */
+    .edinburgh {
+      width: 195px;
+      right: 20%;
+      top: 370px;
+
+      transform: rotate(-6deg);
+    }
+
+    .edinburgh:hover {
+      transform:
+        rotate(-2deg)
+        translateY(-7px)
+        scale(1.07);
+    }
+
+
+    /* 手机屏幕 */
+    @media (max-width: 700px) {
+
+      .navbar a {
+        margin: 10px;
+        font-size: 17px;
+      }
+
+      .page-content h1 {
+        font-size: 34px;
+      }
+
+      .trip-board {
+        height: 850px;
+      }
+
+      .london {
+        width: 135px;
+        left: 5%;
+        top: 60px;
+      }
+
+      .oxford {
+        width: 125px;
+        left: 48%;
+        top: 90px;
+      }
+
+      .cambridge {
+        width: 130px;
+        right: 7%;
+        top: 300px;
+      }
+
+      .york {
+        width: 125px;
+        left: 8%;
+        top: 470px;
+      }
+
+      .edinburgh {
+        width: 145px;
+        right: 10%;
+        top: 600px;
+      }
+    }
+    
   </style>
 </head>
 
@@ -72,9 +297,91 @@
   <!-- 页面内容 -->
   <main class="page-content">
     <h1>Trip</h1>
-    <p>
-      这里可能会放一些旅游记录！
+    <p class="trip-intro">
+      Little pieces of the world🗺️
     </p>
+
+
+    <!-- 冰箱贴集合 -->
+    <div class="trip-board">
+
+      <!-- London -->
+      <a href="trip/london" class="trip-magnet london">
+
+        <img
+          src="images/trip/london.png"
+          alt="London"
+        >
+
+        <span class="trip-label">
+          London
+        </span>
+
+      </a>
+
+
+      <!-- Oxford -->
+      <a href="trip/oxford" class="trip-magnet oxford">
+
+        <img
+          src="images/trip/oxford.png"
+          alt="Oxford"
+        >
+
+        <span class="trip-label">
+          Oxford
+        </span>
+
+      </a>
+
+
+      <!-- Cambridge -->
+      <a href="trip/cambridge" class="trip-magnet cambridge">
+
+        <img
+          src="images/trip/cambridge.png"
+          alt="Cambridge"
+        >
+
+        <span class="trip-label">
+          Cambridge
+        </span>
+
+      </a>
+
+
+      <!-- York -->
+      <a href="trip/york" class="trip-magnet york">
+
+        <img
+          src="images/trip/york.png"
+          alt="York"
+        >
+
+        <span class="trip-label">
+          York
+        </span>
+
+      </a>
+
+
+      <!-- Edinburgh -->
+      <a href="trip/edinburgh" class="trip-magnet edinburgh">
+
+        <img
+          src="images/trip/edinburgh.png"
+          alt="Edinburgh"
+        >
+
+        <span class="trip-label">
+          Edinburgh
+        </span>
+
+      </a>
+
+
+    </div>
+
   </main>
 
 </body>
